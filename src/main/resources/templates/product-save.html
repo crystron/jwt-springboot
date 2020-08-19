@@ -1,0 +1,14 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Spring Boot - Hibernate</title>
+</head>
+<body>
+    <a th:href="@{/product-list}"> List Product </a><br />
+    <h1>Add new Product:</h1>
+      <form th:action="@{/saveProduct}" method="POST" th:object="${product}">
+          Name: <input th:field="*{name}"/> <br/> <br/>
+          Address: <input th:field="*{image}"/> <br/> <br/>
+        <input type="submit" value="Submit" />
+      </form>
+</body>
+</html>
