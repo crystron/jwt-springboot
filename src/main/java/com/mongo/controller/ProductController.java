@@ -25,7 +25,7 @@ public class ProductController {
 
     @GetMapping("/")
     public String homePage(){
-        return "HomePage";
+        return "Trang Chủ";
     }
 
     @GetMapping("/all")
