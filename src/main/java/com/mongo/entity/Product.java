@@ -1,13 +1,18 @@
 package com.mongo.entity;
 
 import lombok.Generated;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.stereotype.Service;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 
 @Document(collection = "product")
+@Getter
+@Setter
 public class Product {
     @Id
     private String id;
@@ -26,23 +31,5 @@ public class Product {
     @Override
     public String toString(){
         return String.format("Product[id=%s, name='%s',image='%s']",id, name, image);
-    }
-
-    public String  getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getImage() {
-        return image;
-    }
-    public void setImage(String image) {
-        this.image = image;
     }
 }
