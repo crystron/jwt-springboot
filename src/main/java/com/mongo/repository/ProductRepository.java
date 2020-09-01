@@ -10,7 +10,6 @@ import java.util.List;
 
 @Repository
 public interface ProductRepository extends MongoRepository<Product, String> {
-    public Product findByName(String name);
     public Product findById(int id);
     public void deleteById(int id);
 }

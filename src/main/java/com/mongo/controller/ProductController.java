@@ -17,6 +17,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000")
 public class ProductController {
     @Autowired
     ProductRepository repository;
@@ -46,7 +47,14 @@ public class ProductController {
 
     @PostMapping("/save")
     public String insertProduct(@RequestBody Product product ){
-        repository.insert(new Product(product.getId(),product.getName(), product.getImage()));
+        repository.insert(new Product(
+                            product.getId(),
+                            product.getTitle(),
+                            product.getAltName(),
+                            product.getType(),
+                            product.getImage(),
+                            product.getStatus()
+                        ));
         return "OK";
     }
 
@@ -54,7 +62,14 @@ public class ProductController {
     public String updateProduct(@RequestBody Product product, @PathVariable("id")String id){
         Optional<Product> p1 =  repository.findById(id);
         if ( p1.isPresent()){
-            repository.save(new Product(product.getId(), product.getName(), product.getImage()));
+            repository.save(new Product(
+                    product.getId(),
+                    product.getTitle(),
+                    product.getImage(),
+                    product.getAltName(),
+                    product.getType(),
+                    product.getStatus()
+                    ));
             return "OK";
         }
         else
