@@ -13,7 +13,12 @@ public class Account {
     @Id
     private String id;
     private String name;
-    private String displayName;
     private String password;
-    private boolean type;
+
+    public Account(){}
+    public Account(String id, String name, String password){
+        this.id = id;
+        this.name = name;
+        this.password = password;
+    }
 }

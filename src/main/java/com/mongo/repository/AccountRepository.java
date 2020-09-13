@@ -10,4 +10,5 @@ import java.util.List;
 @Repository
 public interface AccountRepository extends MongoRepository<Account, String> {
     public List<Account> findAll();
+    public void deleteAccountById(String id);
 }
