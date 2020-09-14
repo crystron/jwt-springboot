@@ -1,6 +1,5 @@
 package com.mongo.entity;
 
-import com.sun.xml.internal.ws.util.UtilException;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;

@@ -1,9 +1,7 @@
 package com.mongo.controller;
 
 import com.mongo.entity.Account;
-import com.mongo.entity.Product;
 import com.mongo.repository.AccountRepository;
-import com.mongo.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
