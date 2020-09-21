@@ -3,6 +3,7 @@ package com.mongo.entity;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 import javax.persistence.Id;
 
@@ -12,13 +13,14 @@ import javax.persistence.Id;
 public class Account {
     @Id
     private String id;
-    private String name;
+    @Field(name = "username")
+    private String username;
     private String password;
 
     public Account(){}
     public Account(String id, String name, String password){
         this.id = id;
-        this.name = name;
+        this.username = name;
         this.password = password;
     }
 }

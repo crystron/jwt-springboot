@@ -20,7 +20,7 @@ public class AccountController {
     public Account insertAccount(@RequestBody Account account){
         repository.insert(new Account(
                 account.getId(),
-                account.getName(),
+                account.getUsername(),
                 account.getPassword()
         ));
         return account;
